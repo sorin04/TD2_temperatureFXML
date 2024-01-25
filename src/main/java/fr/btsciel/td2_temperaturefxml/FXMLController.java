@@ -14,32 +14,18 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class FXMLController implements Initializable {
-
-    @FXML
-    CategoryAxis xAxis;
-    @FXML
-    NumberAxis yAxis;
-    public LineChart<String,Number> LineChart =new LineChart<>(xAxis, yAxis);
-    XYChart.Series<String,Number> series1 = new XYChart.Series<>();
-
-
+    public LineChart<Number, Number>courbe;
+    public XYChart.Series series1 = new XYChart.Series<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        LineChart.setAnimated(true);
-        LineChart.setCreateSymbols(false);
-
-        for (int i = -6; i < 6; i= 0.1+1) {
-            if (if = 0) {
-                series1.getData().add(XYChart.Data<Number, Number>(i,Math.sin(i)/i));
-
-
-
+        courbe.setAnimated(true);
+        courbe.setCreateSymbols(false);
+        for (double i = -6; i < 6; i = 0.1+i) {
+            if (i!= 0) {
+                series1.getData().add(new XYChart.Data<Number, Number>(i,Math.sin(i)/i));
             }
-
         }
-
-
-
+        courbe.getData().add(series1);
     }
 }
