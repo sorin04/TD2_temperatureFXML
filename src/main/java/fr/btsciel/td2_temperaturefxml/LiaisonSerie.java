@@ -15,6 +15,7 @@ public class LiaisonSerie implements SerialPortEventListener {
     public SerialPort serialPort;
 
     public LiaisonSerie() {
+
     }
 
     /**

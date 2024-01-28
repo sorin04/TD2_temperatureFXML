@@ -1,4 +1,4 @@
-package fr.btsciel.td2_temperaturefxml;
+package org.example.monitoringtemperatures;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,9 +9,10 @@ import java.io.IOException;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("Capteur Temperature");
+        stage.setResizable(true);
         stage.setScene(scene);
         stage.show();
     }
