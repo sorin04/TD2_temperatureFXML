@@ -7,4 +7,6 @@ module fr.btsciel.td2_temperaturefxml {
 
     opens fr.btsciel.td2_temperaturefxml to javafx.fxml;
     exports fr.btsciel.td2_temperaturefxml;
+    exports org.example.monitoringtemperatures;
+    opens org.example.monitoringtemperatures to javafx.fxml;
 }

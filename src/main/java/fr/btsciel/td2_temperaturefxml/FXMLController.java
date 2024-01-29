@@ -3,7 +3,6 @@ package fr.btsciel.td2_temperaturefxml;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
-import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
@@ -14,7 +13,7 @@ import java.util.ResourceBundle;
 public class FXMLController implements Initializable {
     @FXML
     public LineChart<Number, Number> temperature;
-    public CategoryAxis xAxis;
+    public NumberAxis xAxis;
     public NumberAxis yAxis;
 
     private LiaisonSerie liaisonSerie;
@@ -23,7 +22,11 @@ public class FXMLController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         temperature.setAnimated(false);
+        xAxis = new NumberAxis();
+        yAxis = new NumberAxis();
+        xAxis.setLabel("Temps");
         yAxis.setLabel("Graphique");
+
         temperature.setCursor(Cursor.CROSSHAIR);
         series1.setName("Capteur Z56");
         temperature.getData().add(series1);
