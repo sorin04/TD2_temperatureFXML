@@ -21,7 +21,6 @@ public class CapteurTemperature extends LiaisonSerie {
     public void configurerConnexionCapteur(String portDeTravail) throws SerialPortException {
         super.initCom(portDeTravail);
         super.configurerParametres(VITESSE, DONNEES, PARITE, ARRET);
-        super.serialPort.openPort();
     }
 
     public float decodageTrameCapteur(byte[] byteArray) {
@@ -68,4 +67,12 @@ public class CapteurTemperature extends LiaisonSerie {
                 %s Kelvin
                 %n""", decodageTrameCapteur(OCTETS_DEBUT_IEEE), decodageTrameCapteur(OCTETS_DEBUT_IEEE) + 273.15f);
     }
+
+    public void fermerLiaisonSerieCapteur() {
+    }
+
+    public double getValeurLue() {
+        return 0;
+    }
 }
+

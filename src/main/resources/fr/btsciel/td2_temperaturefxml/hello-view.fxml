@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.chart.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="fr.btsciel.td2_temperaturefxml.FXMLController">
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.btsciel.td2_temperaturefxml.FXMLController">
    <children>
-      <LineChart fx:id="temperature" prefHeight="212.0" prefWidth="710.0" >
+      <LineChart fx:id="temperature" prefHeight="212.0" prefWidth="710.0">
         <xAxis>
-          <NumberAxis label="temp" />
+          <CategoryAxis label="temp" fx:id="xAxis" />
         </xAxis>
         <yAxis>
-          <NumberAxis label="temperature" />
+          <NumberAxis fx:id="yAxis" label="temperature" />
         </yAxis>
       </LineChart>
        <Button layoutX="224.0" layoutY="185.0" onAction="#BoutonON" text="Cliquer_ici" />
