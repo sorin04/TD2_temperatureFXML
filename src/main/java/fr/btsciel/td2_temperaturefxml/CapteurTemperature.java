@@ -65,14 +65,14 @@ public class CapteurTemperature extends LiaisonSerie {
                 --- Réception ---
                 %s Celsius
                 %s Kelvin
-                %n""", decodageTrameCapteur(OCTETS_DEBUT_IEEE), decodageTrameCapteur(OCTETS_DEBUT_IEEE) + 273.15f);
+                %n""", conversionTrameCapteur(OCTETS_DEBUT_IEEE), conversionTrameCapteur(OCTETS_DEBUT_IEEE) + 273.15f);
     }
 
     public void fermerLiaisonSerieCapteur() {
     }
 
     public double getValeurLue() {
-        return 0;
+        return valeurMesuree;
     }
 }
 
